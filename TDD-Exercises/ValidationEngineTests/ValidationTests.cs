@@ -11,6 +11,16 @@ namespace ValidationEngineTests
    public class ValidationTests
     {
         [Test]
+        public void IfNullOrEmtyReturnFalse()
+        {
+            var sut = new Validator();
+            var res = sut.ValidateEmailAdress("");                  
+            Assert.IsFalse(res);
+            
+        }
+
+
+    [Test]
         public void TrueForValidAddress()
         {
             var sut = new Validator(); //Arrange
@@ -28,7 +38,6 @@ namespace ValidationEngineTests
 
             Assert.IsFalse(res); //Assert
         }
-
-
+       
     }
 }
