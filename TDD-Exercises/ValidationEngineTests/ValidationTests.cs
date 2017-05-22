@@ -13,11 +13,20 @@ namespace ValidationEngineTests
         [Test]
         public void TrueForValidAddress()
         {
-            var sut = new Validator();
+            var sut = new Validator(); //Arrange
 
-            sut.ValidateEmailAdress("hampus_cousin@hotmail.com");
+          var res =  sut.ValidateEmailAdress("hampus_cousin@hotmail.com"); //Act
+            
+            Assert.IsTrue(res); //Assert
+        }
+       [Test]
+       public void CheckIfInvalid()
+        {
+            var sut = new Validator(); //Arrange
 
-            Assert.IsTrue(true);
+           var res = sut.ValidateEmailAdress("lusfb43iu5y523hufn"); //Act
+
+            Assert.IsFalse(res); //Assert
         }
 
 
