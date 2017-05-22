@@ -11,7 +11,7 @@ namespace ValidationEngineTests
    public class ValidationTests
     {
         [Test]
-        public void IfNullOrEmtyReturnFalse()
+        public void IfEmtyReturnFalse()
         {
             var sut = new Validator();
             var res = sut.ValidateEmailAdress("");                  
