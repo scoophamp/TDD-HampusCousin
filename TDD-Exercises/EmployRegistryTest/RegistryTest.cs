@@ -20,8 +20,8 @@ namespace EmployRegistryTest
         public void Setup()
         {
             employees = new Dictionary<string, Employee>();
-            employee1 = new Employee("Martin", "Nilsson", "8080-8080");
-            employee2 = new Employee("Hampus", "Cousin", "9090-9090");
+            employee1 = new Employee("Martin", "Nilsson", "808080-8080");
+            employee2 = new Employee("Hampus", "Cousin", "909090-9090");
 
             sut = new Registry();
         }
