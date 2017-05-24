@@ -36,6 +36,17 @@ namespace Dag2
             //    return !(a == b);
             //}
         }
+        private DateTime sut;
+        [SetUp]                            //Sätter sut:en i varje test
+        public void Setup()
+        {
+            sut = DateTime.Now;
+        }
+        [TearDown]                         //Körs efter varje test
+        public void TearDown()
+        {
+
+        }
 
         [Test]
         public void TryingAreEqual()
@@ -80,6 +91,20 @@ namespace Dag2
         {
             StringAssert.DoesNotMatch(@"\d", "asda"); //regexer.com
 
+        }
+        [TestCase(1, 2, 3)]
+        [TestCase(2, 3, 5)]
+        [TestCase(3, 5, 8)]
+
+        public void CanAdd(int a, int b, int ex)
+        {
+            Assert.AreEqual(ex, a + b);
+        }
+        //Inte nödvändigt att kunna
+        [Test, Sequential]
+        public void CanAddAgain([Values(1,2,3)]int a, [Values(2, 2, 3)]int b, [Values(3, 4, 6)]int exp)
+        {
+            Assert.AreEqual(exp, a + b);
         }
 
     }
